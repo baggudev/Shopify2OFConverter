@@ -1,8 +1,42 @@
 body {
-  padding: 50px;
+  width: 550px;
+  margin: auto;
+  letter-spacing: 0.5px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.heading {
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 50px;
+}
+
+.download {
+    padding: 20px 0px;
+}
+
+.download form {
+    display: flex;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin-right: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
 }
 
 a {
   color: #00B7FF;
 }
+

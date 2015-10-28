@@ -11,10 +11,30 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <body>
-    Hi. 
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <input class="btn btn-default" type="file" name="orders" accept="text/csv"/>
-        <button class="btn btn-default" type="submit">submit</button>
-    </form>
+    <div class="heading">
+        <h1> BAGGU </h1>
+    </div>
+
+    <div class="intro">
+        Hi Baggu.
+        </br>
+        </br>
+        Use this portal to upload your Shopify CSV and a converted CSV for OnFulfillment will be downloaded quickly. 
+    </div>
+    <div class="download">
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <div class="fileUpload btn btn-primary">
+                <span> Upload </span>
+                <input class="upload" type="file" name="orders" accept="text/csv"/>
+            </div>
+            <button class="btn btn-default" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="end">
+        Cheers
+        </br>
+        - Eng
+    </div>
 </body>
 </html>
