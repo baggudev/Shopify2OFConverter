@@ -10,22 +10,21 @@ router.get('/', function(req, res, next) {
 var multer = require("multer");
 var upload = multer({
   dest: "./uploads"
-})
+});
+
 /* FILE UPLOAD */
 router.post("/upload", upload.any(), function(req, res) {
-  // do things
-  console.log("hi");
-  console.log(JSON.stringify(req.files));
-
   // READ FILE NAME AND CREATE TRANSLATED CSV
-  var filePath = req.files[0].path;
-  console.log("file path: " + filePath);
-  converter.convert(filePath, handleDownload(req, res));
+  if (req.files.length > 0) {
+    var filePath = req.files[0].path;
+    converter.convert(filePath, handleDownload(req, res));
+  } else {
+    res.send("invalid file: go back and try again.");
+  }
 });
 
 var handleDownload = function(req, res) {
     return function(downloadPath) {
-        console.log("the download path: " + downloadPath); 
         if (downloadPath) {
             res.download(downloadPath);
         }

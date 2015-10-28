@@ -7,7 +7,6 @@
         <link rel="stylesheet" href="stylesheets/style.css">
 
         <!-- Latest compiled and minified JavaScript -->
-        <script src="javascripts/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <body>
@@ -27,6 +26,7 @@
         2) Press submit.
     </div>
     <div class="download">
+        <label class="fileNamePlaceholder"></label>
         <form action="/upload" method="post" enctype="multipart/form-data">
             <div class="fileUpload btn btn-primary">
                 <span> Upload </span>
@@ -36,10 +36,19 @@
         </form>
     </div>
 
+    </br>
+    </br>
     <div class="end">
         Cheers
         </br>
         - Eng
     </div>
 </body>
+
+<script>
+    $('input[name="orders"]').change(function(){
+        var filename = $(this).val();
+        $('.fileNamePlaceholder').text(filename);
+    });
+</script>
 </html>
